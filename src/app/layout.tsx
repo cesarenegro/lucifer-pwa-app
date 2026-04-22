@@ -50,7 +50,7 @@ export default function RootLayout({
       <body className="h-[100dvh] w-full flex flex-col font-body bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container overflow-hidden overscroll-none">
         <LanguageProvider>
           <TopAppBar />
-          <div className="flex-1 overflow-y-auto pb-[80px]">
+          <div className="flex-1 overflow-y-auto overflow-x-hidden pb-[80px] w-full">
             {children}
           </div>
           <BottomNavBar />
