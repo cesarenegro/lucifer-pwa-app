@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary-dim: #abbad0;
+  --color-on-tertiary-container: #495468;
+  --color-on-primary-container: #c2d2e8;
+  --color-primary-container: #39485a;
+  --color-on-secondary-container: #b2c0d9;
+  --color-error-dim: #bb5551;
+  --color-surface-dim: #0e0e0f;
+  --color-inverse-on-surface: #565556;
+  --color-surface-container: #19191b;
+  --color-tertiary: #f0f3ff;
+  --color-tertiary-dim: #ccd7ef;
+  --color-tertiary-fixed: #dae6fe;
+  --color-tertiary-fixed-dim: #ccd7ef;
+  --color-secondary: #909fb6;
+  --color-background: #0e0e0f;
+  --color-on-tertiary: #515c70;
+  --color-surface-container-low: #131315;
+  --color-secondary-container: #2e3c50;
+  --color-on-tertiary-fixed: #374155;
+  --color-on-tertiary-fixed-variant: #535e72;
+  --color-surface-container-lowest: #000000;
+  --color-surface-bright: #2b2c2f;
+  --color-inverse-primary: #526073;
+  --color-surface-variant: #252628;
+  --color-on-error: #490106;
+  --color-tertiary-container: #dae6fe;
+  --color-primary-fixed: #d4e4fa;
+  --color-primary: #b9c8de;
+  --color-secondary-fixed-dim: #c7d5ee;
+  --color-surface-tint: #b9c8de;
+  --color-on-error-container: #ff9993;
+  --color-on-primary-fixed-variant: #4e5d6f;
+  --color-on-surface: #e7e5e8;
+  --color-surface: #0e0e0f;
+  --color-secondary-dim: #909fb6;
+  --color-error: #ee7d77;
+  --color-on-secondary: #122133;
+  --color-on-surface-variant: #acaaae;
+  --color-on-secondary-fixed-variant: #4e5c71;
+  --color-outline: #767578;
+  --color-primary-fixed-dim: #c6d6ec;
+  --color-secondary-fixed: #d5e3fd;
+  --color-on-primary-fixed: #324052;
+  --color-inverse-surface: #fcf8f9;
+  --color-surface-container-high: #1f1f22;
+  --color-on-primary: #334153;
+  --color-outline-variant: #48484b;
+  --color-surface-container-highest: #252628;
+  --color-on-secondary-fixed: #324054;
+  --color-on-background: #e7e5e8;
+  --color-error-container: #7f2927;
+  
+  --radius-DEFAULT: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 0px;
+
+  --font-headline: var(--font-manrope);
+  --font-body: var(--font-inter);
+  --font-label: var(--font-space-grotesk);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-surface-container-high);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Toggle Switch from designs */
+  .toggle-switch {
+    @apply w-8 h-4 bg-surface-container-high relative cursor-pointer transition-colors;
+  }
+  .toggle-switch::after {
+    content: '';
+    @apply absolute top-[2px] left-[2px] w-3 h-3 bg-outline-variant transition-all duration-200 ease-in-out;
+  }
+  .toggle-switch.toggle-active::after {
+    @apply left-[18px] bg-primary;
+  }
+  .toggle-switch.toggle-active {
+    @apply bg-secondary-container;
+  }
+
+  .matte-glow {
+    box-shadow: 0 0 15px rgba(185, 200, 222, 0.1);
+  }
+  .cipher-glow {
+    box-shadow: 0 0 40px rgba(185, 200, 222, 0.05);
+  }
 }

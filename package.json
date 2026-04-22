@@ -9,11 +9,19 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@capacitor/android": "^8.3.1",
+    "@capacitor/core": "^8.3.1",
+    "@capacitor/ios": "^8.3.1",
+    "@ducanh2912/next-pwa": "^10.2.9",
+    "@supabase/supabase-js": "^2.104.0",
+    "dotenv": "^17.4.2",
+    "html5-qrcode": "^2.3.8",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.3.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
